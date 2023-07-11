@@ -4,23 +4,42 @@
 .window { 
     &__row {
         //max-width: 90%;
+        &-avatar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include size(30px, 30px);
+            border-radius: 50%;  
+            background-color: green;              
+        }
         &-text {
+            display: flex;
+            align-items: center;
             margin-bottom: 0;
-            &.sender {
-                background-color: rgb(131, 188, 131);
-            }            
-            &.recipient {
-                background-color: #f0f2f5;
-            }
-            padding: 0.3125rem 0.625rem;        
+            padding: 10px;        
             margin-bottom: 0px;
             width: 100%;
-            border-radius: 6px;
-            @include font-style(0.8rem, #212121);
-            text-align: left;
+            @include font-style(0.9rem, #212121);
+            text-align: left;        
+            &.sender {
+                background: rgb(2,0,36);
+                background-image: linear-gradient(to bottom right, #6386fc, #44c9ea);
+                border-top-left-radius: 50px;
+                border-bottom-left-radius: 50px;
+                border-top-right-radius: 40px;
+                color: #dee0e8;
+            }            
+            &.recipient {
+                background-color: #f2f5fc;
+                border-top-right-radius: 50px;
+                border-bottom-right-radius: 50px;
+                border-top-left-radius: 40px;
+                color: #acadb2;
+            }            
         }
         time {
             display: block;
+            font-size: 0.7em;
         }
     }   
 }

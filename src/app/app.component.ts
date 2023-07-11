@@ -41,6 +41,7 @@ export class AppComponent {
         console.log(data);        
         if(data !== null) {
           const index = this.giveMeBackChatIndex(data.chat_uuid);
+          console.log(index);
           if(index === -1) {
             //console.log("non esiste");
             /* this.addChat(data, null);
@@ -74,6 +75,11 @@ export class AppComponent {
         id: 10,
         firstname: 'Mario',
         lastname: 'Rossi'
+      },
+      {
+        id: 11,
+        firstname: 'Marika',
+        lastname: 'Di Rosa'
       }
     ]
   }

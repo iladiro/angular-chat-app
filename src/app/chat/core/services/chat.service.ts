@@ -63,8 +63,10 @@ export class ChatService {
   }
 
   open(logged_account: LoggedAccount, user: User): void {
+    console.log("logged account id", logged_account.id);
+    console.log("user id", user.id);
     const obj = {
-      "chat_uuid": this.generateUUID(logged_account.id, user.id),
+      "chat_uuid": this.generateUUID(logged_account, user),
       "created_by": {
         "id": logged_account.id,
         "firstname": logged_account.firstname,
@@ -100,7 +102,7 @@ export class ChatService {
     this.chat$.next(item);
   }
 
-  generateUUID(sender_id: number, recipient_id: number): string {
-    return uuidv5((sender_id * recipient_id).toString(), this.uuidStatic);
+  generateUUID(sender: LoggedAccount, recipient: User): string {
+    return uuidv5(((sender.id * recipient.id) + (sender.id + recipient.id)).toString(), this.uuidStatic);
   }
 }

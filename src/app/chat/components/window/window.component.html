@@ -4,7 +4,7 @@
     <div class="window__receiver">
       <div class="d-flex justify-content-between">
         <div class="flex-fill">
-          <button (click)="collapseWindow()" class="btn--reset text-left d-full p-2 ps-3">
+          <button (click)="collapseWindow()" class="btn--reset text-left d-full p-3 ps-3">
             <i class="fa fa-comments" aria-hidden="true"></i>
             <span class="window__receiver-name text-capitalize ps-2">
               <ng-container *ngIf="chat.created_by.id == loggedAccount.id; else recived">
@@ -47,7 +47,7 @@
               type="text"
               id="text"
               formControlName="text"
-              placeholder="Enter message"
+              placeholder="Type message"
               (keyup.enter)="triggerFunction(form)"
             />
         </form>
