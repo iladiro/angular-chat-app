@@ -1,0 +1,17 @@
+<!-- <p>account loggato: {{loggedAccountId}}</p>
+<p>sender: {{message.sender.id}}</p>
+<p>ricevente: {{message.receiver.id}}</p> -->
+
+<div [ngClass]="message.sender.id == loggedAccountId ? 'float-end text-right' : 'float-start text-left'" class="pb-2">
+    <div class="window__row">    
+      <p [ngClass]="message.receiver.id == loggedAccountId ? 'recipient' : 'sender'" class="window__row-text">
+        {{message.text}} 
+      </p>        
+      <time>
+        <small class="text-secondary">
+          <span class="text-capitalize">{{message.sender.firstname}}</span>&nbsp;•&nbsp;{{message.send_at | date}}         
+          <!-- <img src="../../../../../assets/images/icons/double_check.png" width="15"> -->
+        </small>
+      </time> 
+    </div>
+</div>

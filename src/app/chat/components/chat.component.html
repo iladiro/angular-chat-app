@@ -1,0 +1,11 @@
+<ng-container *ngIf="chats">  
+    <div class="d-flex align-items-end" style="position: fixed; right: 50px; bottom: 0; z-index: 9999; padding: 0 20px;"> 
+      <div class="pe-2"  *ngFor="let chat of chats; let i = index" >
+        <iladiro-window
+          [loggedAccount]="loggedAccount" 
+          [chat]="chat" 
+          [openByMySelf]="openByMySelf">
+      </iladiro-window>
+      </div>   
+    </div>
+</ng-container>
