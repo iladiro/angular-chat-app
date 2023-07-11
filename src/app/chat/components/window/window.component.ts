@@ -29,8 +29,6 @@ export class WindowComponent {
   }
 
   getChatMessages(): Message[] {
-    console.log("get messages");
-    console.log(this.chat);
     return [
       {
         id: 0,

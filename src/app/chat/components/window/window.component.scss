@@ -4,6 +4,10 @@
 .window {
     width: 300px;
     font-size: 0.75rem;
+    @include transition(transform .3s ease-out);
+    &.collapsed {
+        @include transform(translateY(0%))
+    }
     &__container {    
         overflow: hidden;
         background-color: white;
